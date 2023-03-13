@@ -1,0 +1,27 @@
+{
+  "name": "@primate/htmx",
+  "version": "0.1.0",
+  "author": "Terrablue <terrablue@proton.me>",
+  "homepage": "https://primatejs.com/modules/htmx",
+  "bugs": "https://github.com/primatejs/primate-htmx/issues",
+  "repository": "https://github.com/primatejs/primate-htmx",
+  "description": "Primate HTMX module",
+  "license": "MIT",
+  "dependencies": {
+    "htmt": "^0.1.0",
+    "htmx.org": "^1.8.6",
+    "runtime-compat": "^0.12.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-syntax-import-assertions": "^7.20.0",
+    "eslint": "^8.36.0",
+    "eslint-plugin-json": "^3.1.0"
+  },
+  "type": "module",
+  "exports": "./exports.js",
+  "engines": {
+    "node": ">=17.9.0"
+  }
+}
