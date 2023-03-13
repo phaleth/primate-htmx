@@ -30,11 +30,15 @@ const hash = async (string, algorithm = "sha-384") => {
 
 export default (strings, ...keys) => async (env, headers) => {
   // if doesn't exist, copy htmx.js to public
-  const htmx = env.paths.public.join("htmx.js");
+  // if public doesn't exist, create it
+  const _public = env.paths.public;
+  if (!await _public.exists) {
+    await _public.file.create();
+  }
+  const htmx = _public.join("htmx.js");
   if (!await htmx.exists) {
     await Path.resolve().join(...scriptPath).file.copy(`${htmx}`);
   }
-  //console.log(btoa("sha384-" + await hash(file)));
   const src = "/htmx.js";
   const integrity = `sha384-${await hash(await htmx.file.read())}`;
   const script = `<script src="${src}" integrity="${integrity}"></script>`;
