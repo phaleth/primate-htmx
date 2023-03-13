@@ -32,8 +32,7 @@ export default (strings, ...keys) => async (env, headers) => {
   // if doesn't exist, copy htmx.js to public
   const htmx = env.paths.public.join("htmx.js");
   if (!await htmx.exists) {
-    await new Path(import.meta.url).directory.directory.join(...scriptPath)
-      .file.copy(`${htmx}`);
+    await Path.resolve().join(...scriptPath).file.copy(`${htmx}`);
   }
   //console.log(btoa("sha384-" + await hash(file)));
   const src = "/htmx.js";
