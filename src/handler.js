@@ -16,7 +16,7 @@ const getIndex = async env => {
   }
 };
 
-const scriptPath = ["node_modules", "htmx.org", "dist", "htmx.js"];
+const scriptPath = ["node_modules", "htmx.org", "dist", "htmx.min.js"];
 
 const hash = async (string, algorithm = "sha-384") => {
   const buffer = new ArrayBuffer(string.length);
